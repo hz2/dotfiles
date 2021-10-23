@@ -1,0 +1,19 @@
+*
+!.gitignore
+!文档
+!文档/software
+!文档/software/make_link.sh
+# idea-IC Installtion Folder
+!文档/software/idea-IC
+!文档/software/idea-IC/start_idea.sh
+!文档/software/idea-IC/idea.desktop
+# pycharm Installtion Folder
+!文档/software/pycharm
+!文档/software/pycharm/start_pycharm.sh
+!文档/software/pycharm/pycharm.desktop
+# tgdesktop
+!文档/software/tgdesktop/
+!文档/software/tgdesktop/telegram.desktop
+# vs codium
+!文档/software/codium/
+!文档/software/codium/codium.desktop
