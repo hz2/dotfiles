@@ -1,7 +1,7 @@
 
 #!/bin/sh
 
-df -h /
+df -h / /home
 
 echo 清理日志
 rm -rf /var/log/user.log
@@ -25,5 +25,4 @@ rm -rf /var/tmp/flatpak-*
 echo 清理 docker
 docker system prune -f
 
-df -h /
-
+df -h / /home
