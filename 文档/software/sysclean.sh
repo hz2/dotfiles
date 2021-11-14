@@ -41,6 +41,7 @@ rm -rf /var/tmp/flatpak-*
 echo 清理 docker
 docker system df
 docker system prune -f
+docker volume prune -f
 docker system df
 
 echo 清理 npm
