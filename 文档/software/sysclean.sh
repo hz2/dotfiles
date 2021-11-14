@@ -4,6 +4,9 @@
 df -h / /home
 
 echo 清理日志
+journalctl --disk-usage
+du -sh /var/log/journal/
+journalctl --vacuum-time=3d
 rm -rf /var/log/user.log
 rm -rf /var/log/messages
 rm -rf /var/log/daemon.log
@@ -18,6 +21,16 @@ du -sh /var/cache/apt
 rm -rf /var/cache/apt
 
 echo 清理 snap 缓存
+
+du -h  /var/lib/snapd/snaps 
+# Removes old revisions of snaps
+# CLOSE ALL SNAPS BEFORE RUNNING THIS
+set -eu
+snap list --all | awk '/disabled/{print $1, $3}' |
+    while read snapname revision; do
+        snap remove "$snapname" --revision="$revision"
+    done
+
 du -sh /var/lib/snapd/cache
 rm -rf /var/lib/snapd/cache
 
