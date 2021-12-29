@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Nightly
+Name[zh_CN]=Nightly
+Comment=Browse the World Wide Web
+GenericName=Web Browser
+X-GNOME-FullName=Nightly Web Browser
+Exec=nightly %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/a/文档/nightly/firefox_nightly.svg
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=Firefox-esr
+StartupNotify=true
