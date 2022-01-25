@@ -7,9 +7,9 @@ echo 清理日志
 journalctl --disk-usage
 du -sh /var/log/journal/
 journalctl --vacuum-time=3d
-rm -rf /var/log/user.log
-rm -rf /var/log/messages
-rm -rf /var/log/daemon.log
+rm -rf /var/log/user.log*
+rm -rf /var/log/messages*
+rm -rf /var/log/daemon.log*
 rm -rf /var/log/syslog*
 
 echo 自动清理 apt
