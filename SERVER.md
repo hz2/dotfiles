@@ -7,3 +7,12 @@ git clone https://github.com/hz2/dotfiles
 ln -s ./dotfiles/server/docker sh
 chmod +x ./sh/*
 ```
+
+## qcloud
+
+
+```
+git clone https://github.com/hz2/dotfiles
+ln -s ./dotfiles/server/docker/qcloud sh
+chmod +x ./sh/*
+```
