@@ -12,7 +12,7 @@ chmod +x ./sh/*
 
 
 ```
-git clone https://github.com/hz2/dotfiles
+git clone  https://ghproxy.com/https://github.com/hz2/dotfiles
 ln -s ./dotfiles/server/docker/qcloud sh
 chmod +x ./sh/*
 ```
