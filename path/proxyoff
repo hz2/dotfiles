@@ -1,0 +1,7 @@
+
+#!/bin/sh
+
+export http_proxy=""
+export https_proxy=""
+
+gsettings set org.gnome.system.proxy mode 'none'
