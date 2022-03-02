@@ -4,7 +4,7 @@
 
 ```
 git clone https://github.com/hz2/dotfiles
-ln -s ./dotfiles/server/docker sh
+ln -s ./dotfiles/server/docker/arm2 sh
 chmod +x ./sh/*
 ```
 
