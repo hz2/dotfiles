@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0e0;
+            place-items: center;
+            display: grid;
+            height: 100vh;
+            font-size: 2em;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            social media: 
+            <a href="https://t.me/+Rndvi8-IksNhYTQx" target="_blank">telegram</a> | 
+            <a href="https://twitter.com/i/communities/1499404458593120260" target="_blank">twitter</a>
+        </li>
+        <li>
+            e-mail: <a id="email"></a>
+        </li>
+    </ul>
+
+    <footer>
+    </footer>
+</body>
+<script>
+    const dom = document.querySelector('#email')
+    const link = location.hostname + '@hx.fyi'
+    dom.innerHTML = link
+    dom.setAttribute('href', 'mailto:' + link)
+</script>
+
+</html>
