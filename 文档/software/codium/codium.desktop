@@ -15,4 +15,4 @@ Keywords=vscode;
 [Desktop Action new-empty-window]
 Name=New Empty Window
 Exec=/home/a/文档/software/codium/bin/codium --no-sandbox --new-window %F
-Icon=/home/a/文档/software/codium/vcode-icon.svg
+Icon=/home/a/文档/software/codium/code-icon.svg
