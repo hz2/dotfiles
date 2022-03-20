@@ -3,7 +3,7 @@
 cd $(dirname $0)
 
 # Telegram
-ln -s $(pwd)/tgdesktop/Telegram /usr/bin/telegram
+ln -s /home/x/software/tgdesktop/Telegram /usr/bin/telegram
 ln -s $(pwd)/tgdesktop/telegram.desktop  /usr/share/applications
 
 # vs codium
