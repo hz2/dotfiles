@@ -1,7 +1,7 @@
 #!/bin/sh
 ln -s /home/x/software/nightly/firefox/firefox /usr/bin/nightly
 
-cp /home/x/dotfiles/software/nightly/nightly.desktop /usr/share/applications/
+cp ~/dotfiles/software/nightly/nightly.desktop ~/.local/share/applications/
 
 
 cp installs.ini ~/.mozilla/firefox
