@@ -2,6 +2,9 @@
 
 cd $(dirname $0)
 
+# nightly
+ln -s $(pwd)/nightly/nightly.desktop ~/.local/share/applications
+
 # Telegram
 ln -s /home/x/software/tgdesktop/Telegram /usr/bin/telegram
 ln -s $(pwd)/tgdesktop/telegram.desktop  ~/.local/share/applications
