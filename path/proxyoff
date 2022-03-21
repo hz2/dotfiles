@@ -5,3 +5,5 @@ export http_proxy=""
 export https_proxy=""
 
 gsettings set org.gnome.system.proxy mode 'none'
+
+echo proxy 已关闭。
