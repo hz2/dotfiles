@@ -7,3 +7,12 @@ export https_proxy=""
 gsettings set org.gnome.system.proxy mode 'none'
 
 echo proxy 已关闭。
+
+
+
+npm config set registry=https://registry.npmmirror.com
+npm config set proxy http://server:port
+npm config set https-proxy http://server:port
+
+
+npm config ls -l
