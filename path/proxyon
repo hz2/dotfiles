@@ -1,8 +1,8 @@
 
 #!/bin/sh
 
-$http=http://127.0.0.1:8889
-$https=http://127.0.0.1:8889
+http=http://127.0.0.1:8889
+
 export http_proxy=$http
 export https_proxy=$http
 
@@ -10,7 +10,8 @@ gsettings set org.gnome.system.proxy mode 'manual'
 
 echo ${http_proxy} 开启成功！
 
+# npm 
+
 npm config set proxy $http
 npm config set https-proxy $http
-npm config set registry=http://registry.npmjs.org
-npm config ls -l
+npm config delete registry
