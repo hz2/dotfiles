@@ -12,3 +12,8 @@ ln -s $(pwd)/.vimrc  ~/.vimrc
 echo 'make path'
 echo export PATH=$PATH:$(pwd)/path >> ~/.profile
 sudo echo export PATH=$PATH:$(pwd)/path >> /root/.profile
+
+
+ln -s ~/dotfiles/.config/fish/config.fish  ~/.config/fish/config.sh
+
+sudo echo export PATH=$PATH:$(pwd)/path >> /root/.profile
