@@ -6,6 +6,7 @@ echo 'make link '
 # ./文档/software/make_link.sh 
 
 ln -s $(pwd)/.bash_aliases  ~/.bash_aliases
+ln -s $(pwd)/.zshrc  ~/.zshrc
 ln -s $(pwd)/.vim  ~/.vim
 ln -s $(pwd)/.vimrc  ~/.vimrc
 
