@@ -102,3 +102,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 source $HOME/.bash_aliases
+
+# pnpm
+export PNPM_HOME="/home/z/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
