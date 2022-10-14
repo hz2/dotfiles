@@ -25,7 +25,10 @@ else
 fi
 }
 
-cecho g '清理前的空间'
+cecho y '╔═══════════════╗'
+cecho y '║  清理前的空间 ║'
+cecho y '╚═══════════════╝'
+
 df -h / /home
 
 cecho c '清理日志'
@@ -76,6 +79,7 @@ docker system df
 cecho c '清理 npm'
 npm cache verify
 
-
-cecho g '清理后的空间'
+cecho g '╔═══════════════╗'
+cecho g '║  清理后的空间 ║'
+cecho g '╚═══════════════╝'
 df -h / /home
