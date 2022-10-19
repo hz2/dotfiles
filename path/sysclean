@@ -25,11 +25,13 @@ else
 fi
 }
 
-cecho y '╔═══════════════╗'
-cecho y '║  清理前的空间 ║'
-cecho y '╚═══════════════╝'
+BEFORESPACE=$(df -h / /home)
 
-df -h / /home
+# echo "$USER"
+# logname
+
+cecho c '清空回收站'
+rm -rf /home/${SUDO_USER}/.local/share/Trash/*
 
 cecho c '清理日志'
 journalctl --disk-usage
@@ -79,6 +81,10 @@ docker system df
 cecho c '清理 npm'
 npm cache verify
 
+cecho y '╔═══════════════╗'
+cecho y '║  清理前的空间 ║'
+cecho y '╚═══════════════╝'
+cecho y "${BEFORESPACE}"
 cecho g '╔═══════════════╗'
 cecho g '║  清理后的空间 ║'
 cecho g '╚═══════════════╝'
