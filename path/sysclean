@@ -80,6 +80,7 @@ docker system df
 
 cecho c '清理 npm'
 npm cache verify
+npm cache clear --force
 
 cecho y '╔═══════════════╗'
 cecho y '║  清理前的空间 ║'
