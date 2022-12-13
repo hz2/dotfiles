@@ -34,6 +34,7 @@ cecho c '清空回收站'
 rm -rf /home/${SUDO_USER}/.local/share/Trash/*
 
 cecho c '清理日志'
+du -sh /var/log
 journalctl --disk-usage
 [ -d "/var/log/journal/" ] && du -sh /var/log/journal/
 journalctl --vacuum-time=3d
