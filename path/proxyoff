@@ -4,6 +4,8 @@
 export http_proxy=""
 export https_proxy=""
 
+unset ALL_PROXY all_proxy HTTP_PROXY http_proxy HTTPS_PROXY https_proxy NO_PROXY no_proxy FTP_PROXY ftp_proxy WS_PROXY ws_proxy YO_PROXY yo_proxy
+
 gsettings set org.gnome.system.proxy mode 'none'
 
 echo proxy 已关闭。
