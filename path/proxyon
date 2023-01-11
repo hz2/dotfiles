@@ -7,8 +7,18 @@ noproxy=localhost,127.0.0.0/8,::1
 
 export ALL_PROXY=$socks
 export all_proxy=$socks
-export {HTTP,HTTPS,FTP}_PROXY=$http
-export {http,https,ftp}_PROXY=$http
+# export {HTTP,HTTPS,FTP}_PROXY=$http
+# export {http,https,ftp}_PROXY=$http
+
+export HTTP_PROXY=$http
+export http_proxy=$http
+
+export HTTPS_PROXY=$http
+export https_proxy=$http
+
+export FTP_PROXY=$http
+export ftp_proxy=$http
+
 export NO_PROXY=$noproxy
 export no_proxy=$noproxy
 
