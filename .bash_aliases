@@ -19,3 +19,8 @@ alias start='npm run start'
 alias deploy='./deployed/sh.sh'
 alias prod='./deployed-prod/prod.sh'
 alias stage='./deployed-prod/stage.sh'
+
+
+dir=$(readlink $0)
+alias proxyon='source $(dirname $dir)/path/proxyon'
+alias proxyoff='source $(dirname $dir)/path/proxyoff'

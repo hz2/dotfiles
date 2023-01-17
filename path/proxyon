@@ -10,17 +10,11 @@ noproxy=localhost,127.0.0.0/8,::1
 # export {HTTP,HTTPS,FTP}_PROXY=$http
 # export {http,https,ftp}_PROXY=$http
 
-export HTTP_PROXY=$http
-export http_proxy=$http
+# export NO_PROXY=$noproxy
+# export no_proxy=$noproxy
 
-export HTTPS_PROXY=$http
-export https_proxy=$http
-
-export FTP_PROXY=$http
-export ftp_proxy=$http
-
-export NO_PROXY=$noproxy
-export no_proxy=$noproxy
+export {HTTP,HTTPS,FTP}_PROXY=$http
+export {http,https,ftp}_proxy=$http
 
 gsettings set org.gnome.system.proxy mode 'manual'
 
@@ -31,3 +25,5 @@ echo ${http_proxy} 开启成功！
 npm config set proxy $http
 npm config set https-proxy $http
 npm config delete registry
+
+echo -e  $(env | grep -i proxy)

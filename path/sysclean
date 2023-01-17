@@ -83,6 +83,12 @@ cecho c '清理 npm'
 npm cache verify
 npm cache clear --force
 
+
+if [ -x "$(command -v yarn)" ]; then
+    cecho c '清理 Yarn 临时文件'
+    yarn cache clean
+fi
+
 cecho y '╔═══════════════╗'
 cecho y '║  清理前的空间 ║'
 cecho y '╚═══════════════╝'
