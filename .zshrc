@@ -7,8 +7,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Theme
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm docker emoji)
+plugins=(git vscode dotenv cp node macos history docker brew nvm npm emoji)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,9 +104,27 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.bash_aliases
 
 # pnpm
-export PNPM_HOME="/home/z/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+if [[ $(uname) = "Darwin" ]]; then
+  export PNPM_HOME="/Users/z/Library/pnpm"
+  export PATH="$PNPM_HOME:/Users/z/.bin:$PATH"
+else
+  export PNPM_HOME="/home/z/.local/share/pnpm"
+  export PATH="$PNPM_HOME:$PATH"
+fi
 # pnpm end
+
+
+alias pn=pnpm
+
+
+
+if [ -d "$HOME/dev/lib/adb-fastboot" ] ; then
+ export PATH="$HOME/dev/lib/adb-fastboot:$PATH"
+fi
+
+
+
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -114,3 +132,27 @@ export NVM_DIR="$HOME/.nvm"
 
 export DENO_INSTALL="/home/z/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+
+
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+
+
+
+
+# http=http://127.0.0.1:8889
+# alias proxyon="export http_proxy=$http && export https_proxy=$http"
+
+
+# networksetup -setwebproxystate "Wi-Fi" off
+# networksetup -setsecurewebproxystate "Wi-Fi" off
+# networksetup -setsocksfirewallproxystate "Wi-Fi" off
+
+
+
+
+# networksetup -setwebproxystate "Wi-Fi" on
+# networksetup -setsecurewebproxystate "Wi-Fi" on
+# networksetup -setsocksfirewallproxystate "Wi-Fi" on
+
+
