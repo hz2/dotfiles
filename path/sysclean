@@ -85,7 +85,7 @@ npm cache clear --force
 
 
 if [ -x "$(command -v yarn)" ]; then
-    cecho c '清理 Yarn 临时文件'
+    cecho c '清理 Yarn 缓存'
     yarn cache clean
 fi
 
@@ -93,6 +93,12 @@ fi
 if [ -x "$(command -v brew)" ]; then
     cecho c '清理 Brew 文件'
     brew cleanup -s
+fi
+
+
+if [ -x "$(command -v pod)" ]; then
+    cecho c '清理 CocoaPods 缓存'
+    pod cache clean --all
 fi
 
 cecho y '╔═══════════════╗'
