@@ -69,7 +69,7 @@ fi
 
 if [ -f  /var/tmp/flatpak-* ]; then
     cecho c '清理 flatpak 临时文件'
-    du -sh /var/tmp/flatpak-*
+    du -ch /var/tmp/flatpak*  | tail -n 1
     rm -rf /var/tmp/flatpak-*
 fi
 
@@ -79,9 +79,13 @@ docker system prune -f
 docker volume prune -f
 docker system df
 
-cecho c '清理 npm'
-npm cache verify
-npm cache clear --force
+
+if [ -x "$(command -v npm)" ]; then
+    cecho c '清理 npm'
+    npm cache verify
+    npm cache clear --force
+fi
+
 
 
 if [ -x "$(command -v yarn)" ]; then
