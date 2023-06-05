@@ -3,15 +3,15 @@
 cd $(dirname $0)
 
 # nightly
-ln -s /home/x/software/nightly/firefox/firefox /usr/bin/nightly
+ln -s /home/z/software/nightly/firefox/firefox /usr/bin/nightly
 ln -s $(pwd)/nightly/nightly.desktop ~/.local/share/applications
 
 # Telegram
-ln -s /home/x/software/tgdesktop/Telegram ../path/telegram
+ln -s /home/z/software/tgdesktop/Telegram ../path/telegram
 ln -s $(pwd)/tgdesktop/telegram.desktop  ~/.local/share/applications
 
 # vs codium
-ln -s /home/x/software/codium/bin/codium ../path/codium
+ln -s /home/z/software/codium/bin/codium ../path/codium
 ln -s $(pwd)/codium/codium.desktop  ~/.local/share/applications
 
 # idea

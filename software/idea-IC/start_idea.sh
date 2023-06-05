@@ -2,7 +2,7 @@
 dir=$(readlink $0)
 cd $(dirname $dir)
 
-cd /home/x/software/idea-IC/
+cd /home/z/software/idea-IC/
 
 if ! grep -q '~/.jetBrains' ./bin/idea.properties; then
     sed -Ei 's+(# idea.(\w*).path=.*)+\1\n  idea.\2.path=~/.jetBrains/IdeaIC/\2+g' ./bin/idea.properties

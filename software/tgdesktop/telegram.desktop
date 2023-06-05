@@ -3,7 +3,7 @@ Version=1.5
 Name=Telegram Desktop
 Comment=Official desktop version of Telegram messaging app
 TryExec=telegram
-Exec=telegram -workdir /home/x/software/tgdesktop/tgdata/ -- %u
+Exec=telegram -workdir /home/z/software/tgdesktop/tgdata/ -- %u
 Icon=telegram
 Terminal=false
 StartupWMClass=TelegramDesktop
@@ -17,6 +17,6 @@ X-GNOME-UsesNotifications=true
 X-GNOME-SingleWindow=true
 
 [Desktop Action Quit]
-Exec=telegram -workdir /home/x/software/tgdesktop/tgdata/ -quit
+Exec=telegram -workdir /home/z/software/tgdesktop/tgdata/ -quit
 Name=Quit Telegram
 Icon=application-exit
