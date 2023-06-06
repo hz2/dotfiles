@@ -31,5 +31,5 @@ alias stage='./deployed-prod/stage.sh'
 
 
 dir=$(readlink $0)
-alias proxyon='source $(dirname $dir)/path/proxyon'
-alias proxyoff='source $(dirname $dir)/path/proxyoff'
+alias proxyon='source proxyon'
+alias proxyoff='source proxyoff'
