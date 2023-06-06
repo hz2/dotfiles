@@ -1,9 +1,12 @@
 #!/bin/sh
 
+cd ~/.local/share/applications
+rm -rf nightly.desktop telegram.desktop codium.desktop idea.desktop pycharm.desktop 
 cd $(dirname $0)
+rm -rf ../path/nightly ../path/telegram ../path/codium ../path/idea ../path/pycharm
 
 # nightly
-ln -s /home/z/software/nightly/firefox/firefox /usr/bin/nightly
+ln -s /home/z/software/nightly/firefox/firefox ../path/nightly
 ln -s $(pwd)/nightly/nightly.desktop ~/.local/share/applications
 
 # Telegram
