@@ -73,11 +73,13 @@ if [ -f  /var/tmp/flatpak-* ]; then
     rm -rf /var/tmp/flatpak-*
 fi
 
-cecho c '清理 docker'
-docker system df
-docker system prune -f
-docker volume prune -f
-docker system df
+if [ -x "$(command -v docker)" ]; then
+    cecho c '清理 docker'
+    docker system df
+    docker system prune -f
+    docker volume prune -f
+    docker system df
+fi
 
 
 if [ -x "$(command -v npm)" ]; then

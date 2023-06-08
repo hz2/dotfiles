@@ -27,3 +27,7 @@ npm config set https-proxy $http
 npm config delete registry
 
 echo -e  $(env | grep -i proxy)
+
+
+# curl 
+echo socks5="127.0.0.1:1987" > ~/.curlr
