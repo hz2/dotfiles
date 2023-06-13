@@ -70,7 +70,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode dotenv cp node macos history docker brew nvm npm emoji)
+plugins=(git vscode  cp node macos history docker brew nvm npm emoji)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -156,5 +156,4 @@ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
 # networksetup -setsocksfirewallproxystate "Wi-Fi" on
 
 
-
-ZSH_DOTENV_PROMPT=false
+# ZSH_DOTENV_PROMPT=false
