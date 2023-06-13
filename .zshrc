@@ -156,3 +156,5 @@ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
 # networksetup -setsocksfirewallproxystate "Wi-Fi" on
 
 
+
+ZSH_DOTENV_PROMPT=false
