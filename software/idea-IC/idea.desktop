@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=idea
-Icon=/home/x/software/idea-IC/bin/idea.svg
+Icon=/home/z/software/idea-IC/bin/idea.svg
 Exec=idea %f
 Comment=Capable and Ergonomic IDE for JVM
 Categories=Development;IDE;
