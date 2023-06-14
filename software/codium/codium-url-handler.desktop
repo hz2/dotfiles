@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=codium - URL Handler
+Comment=Code Editing. Redefined.
+GenericName=Text Editor
+Exec=/home/z/software/codium/bin/codium --open-url %U
+Icon=/home/z/software/codium/resources/app/resources/linux/code.png
+Type=Application
+NoDisplay=true
+StartupNotify=true
+Categories=Utility;TextEditor;Development;IDE;
+MimeType=x-scheme-handler/vscodium;
+Keywords=vscode;
