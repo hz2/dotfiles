@@ -67,7 +67,7 @@ if [ -f  /var/lib/snapd/cache ]; then
     rm -rf /var/lib/snapd/cache
 fi
 
-if [ -f  /var/tmp/flatpak-* ]; then
+if ls /var/tmp/flatpak-* ; then
     cecho c '清理 flatpak 临时文件'
     du -ch /var/tmp/flatpak*  | tail -n 1
     rm -rf /var/tmp/flatpak-*
