@@ -33,3 +33,8 @@ alias stage='./deployed-prod/stage.sh'
 dir=$(readlink $0)
 alias proxyon='source proxyon'
 alias proxyoff='source proxyoff'
+
+# download
+# aria2c -d --seed-time=0 ""
+alias a2c='aria2c -d --seed-time=0 '
+alias a2c-open='aria2c --enable-rpc --rpc-listen-all'
