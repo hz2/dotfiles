@@ -16,7 +16,18 @@ noproxy=localhost,127.0.0.0/8,::1
 export {HTTP,HTTPS,FTP}_PROXY=$http
 export {http,https,ftp}_proxy=$http
 
-gsettings set org.gnome.system.proxy mode 'manual'
+
+
+
+if [[ $(uname) = "Darwin" ]]; then
+    networksetup -setwebproxystate "Wi-Fi" on
+    networksetup -setsecurewebproxystate "Wi-Fi" on
+    networksetup -setsocksfirewallproxystate "Wi-Fi" on
+else
+    gsettings set org.gnome.system.proxy mode 'manual'
+fi
+
+
 
 echo ${http_proxy} 开启成功！
 
