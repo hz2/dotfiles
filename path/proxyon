@@ -23,7 +23,7 @@ if [[ $(uname) = "Darwin" ]]; then
     networksetup -setwebproxystate "Wi-Fi" on
     networksetup -setsecurewebproxystate "Wi-Fi" on
     networksetup -setsocksfirewallproxystate "Wi-Fi" on
-else
+elif [[ $(uname) = "Linux" ]]; then
     gsettings set org.gnome.system.proxy mode 'manual'
 fi
 
