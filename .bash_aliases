@@ -34,9 +34,8 @@ alias proxyoff='source proxyoff'
 
 # download
 
-
-# aria2c -d --seed-time=0 ""
-alias a2c='aria2c -d --seed-time=0 '
+# --seed-time=0 
+alias a2c='aria2c '
 alias a2c-open='aria2c --enable-rpc --rpc-listen-all'
 # alias a2c-open='aria2c --enable-rpc --rpc-listen-all --rpc-secret
 if [[ $(uname) = "Darwin" ]]; then
