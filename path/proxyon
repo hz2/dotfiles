@@ -5,8 +5,6 @@ http=http://127.0.0.1:8889
 # socks=socks://127.0.0.1:1987/
 noproxy=localhost,127.0.0.0/8,::1
 
-# export ALL_PROXY=$socks
-# export all_proxy=$socks
 # export {HTTP,HTTPS,FTP}_PROXY=$http
 # export {http,https,ftp}_PROXY=$http
 

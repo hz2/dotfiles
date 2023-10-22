@@ -36,10 +36,9 @@ alias proxyoff='source proxyoff'
 
 # --seed-time=0 
 alias a2c='aria2c '
-alias a2c-open='aria2c --enable-rpc --rpc-listen-all'
-# alias a2c-open='aria2c --enable-rpc --rpc-listen-all --rpc-secret
+alias a2c-open='aria2c --enable-rpc --rpc-listen-all --rpc-secret=12321'
 if [[ $(uname) = "Darwin" ]]; then
     echo "mac"
 elif [[ $(uname) = "Linux" ]]; then
-    alias a2c-web='cd /home/h/software/webui-aria2/&& node node-server.js'
+    alias a2c-web='a2c-open & cd ~/software/webui-aria2/ && node node-server.js'
 fi
