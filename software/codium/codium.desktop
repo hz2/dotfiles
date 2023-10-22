@@ -2,7 +2,7 @@
 Name=codium
 Comment=Code Editing. Redefined.
 GenericName=Text Editor
-Exec=/home/h/software/codium/bin/codium --no-sandbox --unity-launch %F
+Exec=codium --no-sandbox --unity-launch %F
 Icon=vscodium
 Type=Application
 StartupNotify=false
@@ -14,5 +14,5 @@ Keywords=vscode;
 
 [Desktop Action new-empty-window]
 Name=New Empty Window
-Exec=/home/h/software/codium/bin/codium --no-sandbox --new-window %F
-Icon=/home/h/software/codium/resources/app/resources/linux/code.png
+Exec=codium --no-sandbox --new-window %F
+Icon=codium

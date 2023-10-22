@@ -2,7 +2,7 @@
 dir=$(readlink $0)
 cd $(dirname $dir)
 
-cd /home/h/software/idea-IC/
+cd $HOME/software/idea-IC/
 
 
 ./bin/idea.sh

@@ -116,7 +116,7 @@ if [[ $(uname) = "Darwin" ]]; then
   export PNPM_HOME="/Users/z/Library/pnpm"
   export PATH="$PNPM_HOME:/Users/z/.bin:$PATH"
 else
-  export PNPM_HOME="/home/h/.local/share/pnpm"
+  export PNPM_HOME="$HOME/.local/share/pnpm"
   export PATH="$PNPM_HOME:$PATH"
 fi
 # pnpm end
@@ -138,7 +138,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export DENO_INSTALL="/home/h/.deno"
+export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 
@@ -150,19 +150,6 @@ fi
 
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
 
-
-
-
-# networksetup -setwebproxystate "Wi-Fi" off
-# networksetup -setsecurewebproxystate "Wi-Fi" off
-# networksetup -setsocksfirewallproxystate "Wi-Fi" off
-
-
-
-
-# networksetup -setwebproxystate "Wi-Fi" on
-# networksetup -setsecurewebproxystate "Wi-Fi" on
-# networksetup -setsocksfirewallproxystate "Wi-Fi" on
 
 
 # ZSH_DOTENV_PROMPT=false

@@ -2,6 +2,6 @@
 dir=$(readlink $0)
 cd $(dirname $dir)
 
-cd /home/h/software/pycharm/
+cd $HOME/software/pycharm/
 
 ./bin/pycharm.sh
