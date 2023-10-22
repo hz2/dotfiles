@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=pycharm
-Icon=/home/z/software/pycharm/bin/pycharm.svg
+Icon=pycharm
 Exec=pycharm %f
 Comment=Capable and Ergonomic IDE for JVM
 Categories=Development;IDE;

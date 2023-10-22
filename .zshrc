@@ -70,7 +70,15 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode dotenv cp node macos history docker brew nvm npm emoji)
+
+
+if [[ $(uname) = "Darwin" ]]; then
+  plugins=(git vscode  cp node macos history brew nvm npm emoji)
+else
+  plugins=(git vscode  cp node macos history docker brew nvm npm emoji)
+fi
+
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,7 +116,7 @@ if [[ $(uname) = "Darwin" ]]; then
   export PNPM_HOME="/Users/z/Library/pnpm"
   export PATH="$PNPM_HOME:/Users/z/.bin:$PATH"
 else
-  export PNPM_HOME="/home/z/.local/share/pnpm"
+  export PNPM_HOME="/home/h/.local/share/pnpm"
   export PATH="$PNPM_HOME:$PATH"
 fi
 # pnpm end
@@ -130,18 +138,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export DENO_INSTALL="/home/z/.deno"
+export DENO_INSTALL="/home/h/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 
+if [[ $(uname) = "Darwin" ]]; then
+  export PATH="/Users/z/dev/dotfiles/path:$PATH"
+else
+  #
+fi
 
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
 
 
-
-
-# http=http://127.0.0.1:8889
-# alias proxyon="export http_proxy=$http && export https_proxy=$http"
 
 
 # networksetup -setwebproxystate "Wi-Fi" off
@@ -156,3 +165,4 @@ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
 # networksetup -setsocksfirewallproxystate "Wi-Fi" on
 
 
+# ZSH_DOTENV_PROMPT=false
