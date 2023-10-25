@@ -12,7 +12,7 @@ cd $(dirname $0)
 
 ln -sfn ${software}/nightly/firefox/firefox ${bin}/nightly
 ln -sfn $(pwd)/nightly.desktop ${app}
-ln -sfn $(pwd)/nightly/firefox_nightly2.svg ${pic}/nightly.svg
+ln -sfn $(dirname $(pwd))/icons/firefox_nightly.svg ${pic}/nightly.svg
 
 # Telegram
 ln -sfn ${software}/tgdesktop/Telegram ${bin}/telegram
