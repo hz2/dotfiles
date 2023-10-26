@@ -7,7 +7,7 @@ alias ll='ls -l --color=tty'
 alias ls='ls --color=tty'
 
 if [[ $(uname) = "Darwin" ]]; then
-    echo "mac"
+    alias update="brew update && brew upgrade"
 elif [[ $(uname) = "Linux" ]]; then
     alias update='sudo -- sh -c "apt update && apt -y upgrade && apt -y --purge autoremove && sudo apt -y clean"'
 
@@ -38,7 +38,7 @@ alias proxyoff='source proxyoff'
 alias a2c='aria2c '
 alias a2c-open='aria2c --enable-rpc --rpc-listen-all --rpc-secret=12321'
 if [[ $(uname) = "Darwin" ]]; then
-    echo "mac"
+    # echo "mac"
 elif [[ $(uname) = "Linux" ]]; then
     alias a2c-web='a2c-open & cd ~/software/webui-aria2/ && node node-server.js'
 fi

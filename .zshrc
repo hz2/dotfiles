@@ -75,7 +75,7 @@ ZSH_THEME="agnoster"
 if [[ $(uname) = "Darwin" ]]; then
   plugins=(git vscode  cp node macos history brew nvm npm emoji)
 else
-  plugins=(git vscode  cp node macos history docker brew nvm npm emoji)
+  plugins=(git vscode  cp node history docker brew nvm npm emoji)
 fi
 
 
@@ -148,7 +148,13 @@ else
   #
 fi
 
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+
 
 
 
