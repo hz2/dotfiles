@@ -38,7 +38,7 @@ alias proxyoff='source proxyoff'
 alias a2c='aria2c '
 alias a2c-open='aria2c --enable-rpc --rpc-listen-all --rpc-secret=12321'
 if [[ $(uname) = "Darwin" ]]; then
-    # echo "mac"
+    alias a2c-web='a2c-open'
 elif [[ $(uname) = "Linux" ]]; then
     alias a2c-web='a2c-open & cd ~/software/webui-aria2/ && node node-server.js'
 fi
