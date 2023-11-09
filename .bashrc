@@ -120,3 +120,5 @@ export DENO_INSTALL="/home/h/.deno"
 export PATH="$DENO_INSTALL/bin:$HOME/.local/bin:$PATH"
 
 
+
+[ -f ~/.inshellisense/key-bindings.bash ] && source ~/.inshellisense/key-bindings.bash
