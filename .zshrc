@@ -49,6 +49,9 @@ ZSH_THEME="agnoster"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
+
+DEFAULT_USER="z@sh"
+
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
@@ -75,7 +78,7 @@ ZSH_THEME="agnoster"
 if [[ $(uname) = "Darwin" ]]; then
   plugins=(git vscode  cp node macos history brew nvm npm emoji)
 else
-  plugins=(git vscode  cp node history docker brew nvm npm emoji)
+  plugins=(git zsh-autosuggestions zsh-syntax-highlighting vscode  cp node history docker brew nvm npm emoji)
 fi
 
 
