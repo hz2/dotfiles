@@ -124,15 +124,13 @@ fi
 
 alias pn=pnpm
 
-
+# adb
 
 if [ -d "$HOME/dev/lib/adb-fastboot" ] ; then
  export PATH="$HOME/dev/lib/adb-fastboot:$PATH"
 fi
 
-
-
-
+# nvm
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
