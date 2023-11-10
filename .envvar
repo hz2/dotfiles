@@ -1,0 +1,50 @@
+if [[ $(uname) = "Darwin" ]]; then
+    # adb
+    if [ -d "$HOME/dev/lib/adb-fastboot" ]; then
+        export PATH="$HOME/dev/lib/adb-fastboot:$PATH"
+    fi
+
+    # current user bin
+    export DOTBIN="/Users/z/dev/dotfiles/path:/Users/z/.bin"
+
+    # pnpm
+    export PNPM_HOME="/Users/z/Library/pnpm"
+elif [[ $(uname) = "Linux" ]]; then
+    # current user bin
+    export DOTBIN="$HOME/.local/bin"
+
+    # pnpm
+    export PNPM_HOME="$HOME/.local/share/pnpm"
+
+fi
+
+# deno
+export DENO_INSTALL="$HOME/.deno"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# bun completions
+[ -s "/Users/z/.bun/_bun" ] && source "/Users/z/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+
+export PATH="$DOTBIN:$PNPM_HOME:$BUN_INSTALL/bin:$DENO_INSTALL/bin:$PATH"
+
+# inshellisense
+
+if [[ $0 == "bash" ]]; then
+    [ -f ~/.inshellisense/key-bindings.bash ] && source ~/.inshellisense/key-bindings.bash
+elif [[ $0 == "zsh" ]]; then
+    [ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
+fi
+
+# HOMEBREW
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"

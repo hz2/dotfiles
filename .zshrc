@@ -49,7 +49,6 @@ ZSH_THEME="agnoster"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
-
 DEFAULT_USER="z@sh"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -74,14 +73,11 @@ DEFAULT_USER="z@sh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-
 if [[ $(uname) = "Darwin" ]]; then
-  plugins=(git vscode  cp node macos history brew nvm npm emoji)
+  plugins=(git vscode cp node macos history brew nvm npm emoji)
 else
-  plugins=(git zsh-autosuggestions zsh-syntax-highlighting vscode  cp node history docker brew nvm npm emoji)
+  plugins=(git zsh-autosuggestions zsh-syntax-highlighting vscode cp node history docker brew nvm npm emoji)
 fi
-
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,61 +107,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 source $HOME/.bash_aliases
 
-# pnpm
-if [[ $(uname) = "Darwin" ]]; then
-  export PNPM_HOME="/Users/z/Library/pnpm"
-  export PATH="$PNPM_HOME:/Users/z/.bin:$PATH"
-else
-  export PNPM_HOME="$HOME/.local/share/pnpm"
-  export PATH="$PNPM_HOME:$PATH"
+if [ -f ~/.bash_aliases ]; then
+  source ~/dotfiles/.envvar
 fi
-# pnpm end
-
-
-alias pn=pnpm
-
-# adb
-
-if [ -d "$HOME/dev/lib/adb-fastboot" ] ; then
- export PATH="$HOME/dev/lib/adb-fastboot:$PATH"
-fi
-
-# nvm
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export DENO_INSTALL="$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
-
-if [[ $(uname) = "Darwin" ]]; then
-  export PATH="/Users/z/dev/dotfiles/path:$PATH"
-else
-  #
-fi
-
-
-export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
-
-
-
 
 # ZSH_DOTENV_PROMPT=false
-
-# bun completions
-[ -s "/Users/z/.bun/_bun" ] && source "/Users/z/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-[ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
