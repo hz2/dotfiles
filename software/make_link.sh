@@ -18,15 +18,15 @@ ln -sfn $(dirname $(pwd))/icons/firefox_nightly.svg ${pic}/nightly.svg
 ln -sfn ${software}/tgdesktop/Telegram ${bin}/telegram
 ln -sfn $(pwd)/telegram.desktop  ${app}
 
-# vs codium
-ln -sfn ${software}/codium/bin/codium ${bin}/codium
-ln -sfn $(pwd)/codium.desktop  ${app}
-ln -sfn $(pwd)/codium-url-handler.desktop  ${app}
+# # vs codium
+# ln -sfn ${software}/codium/bin/codium ${bin}/codium
+# ln -sfn $(pwd)/codium.desktop  ${app}
+# ln -sfn $(pwd)/codium-url-handler.desktop  ${app}
 
-# idea
-ln -sfn ${software}/idea-IC/bin/idea.sh ${bin}/idea
-ln -sfn $(pwd)/idea.desktop  ${app}
+# # idea
+# ln -sfn ${software}/idea-IC/bin/idea.sh ${bin}/idea
+# ln -sfn $(pwd)/idea.desktop  ${app}
 
-# pycharm
-ln -sfn ${software}/pycharm/bin/pycharm.sh ${bin}/pycharm
-ln -sfn $(pwd)/pycharm.desktop  ${app}
+# # pycharm
+# ln -sfn ${software}/pycharm/bin/pycharm.sh ${bin}/pycharm
+# ln -sfn $(pwd)/pycharm.desktop  ${app}
