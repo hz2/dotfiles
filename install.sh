@@ -15,6 +15,11 @@ ln -sfn $(pwd)/.vim  ~/.vim
 ln -sfn $(pwd)/.vimrc  ~/.vimrc
 
 
+
+# linux
+ln -sfn $(pwd)/path/* $HOME/.local/bin/
+
+
 echo 'make path'
 echo export PATH=$PATH:$(pwd)/path >> ~/.profile
 sudo echo export PATH=$PATH:$(pwd)/path >> /root/.profile
