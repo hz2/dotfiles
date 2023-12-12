@@ -28,6 +28,9 @@ alias deploy='./deployed/sh.sh'
 alias prod='./deployed-prod/prod.sh'
 alias stage='./deployed-prod/stage.sh'
 
+
+alias python2='python2.7'
+
 dir=$(readlink $0)
 alias proxyon='source proxyon'
 alias proxyoff='source proxyoff'
