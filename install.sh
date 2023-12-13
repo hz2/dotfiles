@@ -18,6 +18,7 @@ ln -sfn $(pwd)/.vimrc  ~/.vimrc
 
 # linux
 ln -sfn $(pwd)/path/* $HOME/.local/bin/
+sudo ln -sfn $(pwd)/path/* /usr/local/bin/
 
 
 echo 'make path'

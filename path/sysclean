@@ -69,6 +69,7 @@ fi
 
 if ls /var/tmp/flatpak-* ; then
     cecho c '清理 flatpak 临时文件'
+    flatpak uninstall --unused
     du -ch /var/tmp/flatpak*  | tail -n 1
     rm -rf /var/tmp/flatpak-*
 fi
