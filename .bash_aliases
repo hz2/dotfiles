@@ -9,15 +9,28 @@ alias ls='ls --color=tty'
 if [[ $(uname) = "Darwin" ]]; then
     alias update="brew update && brew upgrade"
 elif [[ $(uname) = "Linux" ]]; then
-    alias update='sudo -- sh -c "apt update && apt -y upgrade && apt -y --purge autoremove && sudo apt -y clean"'
+    if [[ $(uname -n) = "debian" ]]; then
+        upateCmd='sudo -- sh -c "apt update && apt -y upgrade && apt -y --purge autoremove && sudo apt -y clean"'
 
-    alias updatep='sudo -- sh -c "\
-    apt -o Acquire::http::proxy="http://127.0.0.1:8889/" update && \
-    apt -o Acquire::http::proxy="http://127.0.0.1:8889/" -y upgrade && \
-    apt -y --purge autoremove && \
-    sudo apt -y clean"'
+        if [ -x "$(command -v flatpak)" ]; then
+            upateCmd="$upateCmd && flatpak update -y"
+        fi
 
-    alias aptp='apt -o Acquire::http::proxy="http://127.0.0.1:8889/" '
+        alias update=$upateCmd
+
+        alias updatep='sudo -- sh -c "\
+        apt -o Acquire::http::proxy="http://127.0.0.1:8889/" update && \
+        apt -o Acquire::http::proxy="http://127.0.0.1:8889/" -y upgrade && \
+        apt -y --purge autoremove && \
+        sudo apt -y clean"'
+
+        alias aptp='apt -o Acquire::http::proxy="http://127.0.0.1:8889/" '
+
+
+    elif [[ $(uname -n) = "fedora" ]]; then 
+        echo 'fedora'
+    fi
+
 fi
 
 # npm command shortcuts

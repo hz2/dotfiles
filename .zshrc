@@ -114,3 +114,6 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # ZSH_DOTENV_PROMPT=false
+
+# bun completions
+[ -s "/home/h/.bun/_bun" ] && source "/home/h/.bun/_bun"
