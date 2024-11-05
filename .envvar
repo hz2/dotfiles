@@ -15,6 +15,14 @@ elif [[ $(uname) = "Linux" ]]; then
 
     # pnpm
     export PNPM_HOME="$HOME/.local/share/pnpm"
+    # case ":$PATH:" in
+    # *":$PNPM_HOME:"*) ;;
+    # *) export PATH="$PNPM_HOME:$PATH" ;;
+    # esac
+    # pnpm end
+
+
+    
 
 fi
 
@@ -32,7 +40,10 @@ export NVM_DIR="$HOME/.nvm"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 
-export PATH="$DOTBIN:$PNPM_HOME:$BUN_INSTALL/bin:$DENO_INSTALL/bin:$PATH"
+# volta
+export VOLTA_HOME="$HOME/.volta"
+
+export PATH="$DOTBIN:$PNPM_HOME:$VOLTA_HOME/bin:$BUN_INSTALL/bin:$DENO_INSTALL/bin:$PATH"
 
 # inshellisense
 

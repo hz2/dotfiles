@@ -107,13 +107,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source $HOME/.bash_aliases
-
-if [ -f ~/.bash_aliases ]; then
-  source ~/dotfiles/.envvar
+if [ -f $HOME/.bash_aliases ]; then
+  source $HOME/.bash_aliases
 fi
 
 # ZSH_DOTENV_PROMPT=false
-
-# bun completions
-[ -s "/home/h/.bun/_bun" ] && source "/home/h/.bun/_bun"
+if [ -f ~/dotfiles/.envvar ]; then
+    . ~/dotfiles/.envvar
+fi

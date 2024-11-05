@@ -112,6 +112,6 @@ if ! shopt -oq posix; then
     fi
 fi
 
-if [ -f ~/.bash_aliases ]; then
+if [ -f ~/dotfiles/.envvar ]; then
     . ~/dotfiles/.envvar
 fi
