@@ -9,14 +9,15 @@ alias ls='ls --color=tty'
 if [[ $(uname) = "Darwin" ]]; then
     alias update="brew update && brew upgrade"
 elif [[ $(uname) = "Linux" ]]; then
+
+    updateSysCmd=""
+
     if [[ $(uname -n) = "debian" ]]; then
-        upateCmd='sudo -- sh -c "apt update && apt -y upgrade && apt -y --purge autoremove && sudo apt -y clean"'
-
-        if [ -x "$(command -v flatpak)" ]; then
-            upateCmd="$upateCmd && flatpak update -y"
-        fi
-
-        alias update=$upateCmd
+        updateSysCmd='sudo -- sh -c " \
+apt update && \
+apt -y upgrade && \
+apt -y --purge autoremove && \
+apt -y clean"'
 
         alias updatep='sudo -- sh -c "\
         apt -o Acquire::http::proxy="http://127.0.0.1:8889/" update && \
@@ -28,8 +29,20 @@ elif [[ $(uname) = "Linux" ]]; then
 
 
     elif [[ $(uname -n) = "fedora" ]]; then 
-        echo 'fedora'
+        updateSysCmd='sudo -- sh -c " \
+dnf check-upgrade && \
+dnf -y upgrade && \
+dnf -y autoremove && \
+dnf -y clean expire-cache" '
+
     fi
+
+
+
+    if [ -x "$(command -v flatpak)" ]; then
+        updateSysCmd="$updateSysCmd && flatpak update -y"
+    fi 
+    alias update=$updateSysCmd
 
 fi
 
