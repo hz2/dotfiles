@@ -30,9 +30,9 @@ apt -y clean"'
 
     elif [[ $(uname -n) = "fedora" ]]; then 
         updateSysCmd='sudo -- sh -c " \
-dnf check-upgrade && \
-dnf -y upgrade && \
+dnf -y upgrade --refresh && \
 dnf -y autoremove && \
+dnf -y remove --duplicates && \
 dnf -y clean expire-cache" '
 
     fi

@@ -1,5 +1,5 @@
 
-#!/bin/sh
+#!/usr/bin/sh
 
 set -eu
 cecho() {
@@ -7,7 +7,7 @@ cecho() {
     TEXT=${2}
 if [ -z "$TEXT" ]
 then
-    echo "$COLOR"
+    echo -e "$COLOR"
 else
     local code="\033["
     case "$COLOR" in
@@ -21,7 +21,8 @@ else
         gray   | gr) COLOR="${code}0;37m";;
         *) local TEXT="$COLOR"
     esac
-    echo "$COLOR$TEXT${code}0m"
+    echo -e "$COLOR$TEXT${code}0m"
+
 fi
 }
 
@@ -43,13 +44,33 @@ rm -rf /var/log/messages*
 rm -rf /var/log/daemon.log*
 rm -rf /var/log/syslog*
 
-cecho c '自动清理 apt'
-apt autoremove 
-apt autoclean
 
-cecho c '清理 apt 缓存'
-du -sh /var/cache/apt
-rm -rf /var/cache/apt
+
+if [[ $(uname -n) = "debian" ]]; then
+    cecho c '自动清理 apt'
+    apt autoremove 
+    apt autoclean
+
+    cecho c '清理 apt 缓存'
+    du -sh /var/cache/apt
+    rm -rf /var/cache/apt
+fi
+
+if [[ $(uname -n) = "fedora" ]]; then
+
+    cecho c '清理旧内核'
+    old_kernels=($(dnf repoquery --installonly --latest-limit=-1 -q))
+    if [ "${#old_kernels[@]}" -eq 0 ]; then
+        echo "No old kernels found"
+        # exit 1
+    fi
+
+    if ! dnf remove "${old_kernels[@]}"; then
+        echo "Failed to remove old kernels"
+        # exit 1
+    fi
+
+fi
 
 if [ -d  /var/lib/snapd/snaps ]; then
     cecho c '清理 snap 旧版本'
@@ -67,12 +88,14 @@ if [ -f  /var/lib/snapd/cache ]; then
     rm -rf /var/lib/snapd/cache
 fi
 
-if ls /var/tmp/flatpak-* ; then
+if [ -f /var/tmp/flatpak-* ]; then
     cecho c '清理 flatpak 临时文件'
     flatpak uninstall --unused
-    du -ch /var/tmp/flatpak*  | tail -n 1
+    du -ch /var/tmp/flatpak-*  | tail -n 1
     rm -rf /var/tmp/flatpak-*
 fi
+
+# su $(logname) 
 
 if [ -x "$(command -v docker)" ]; then
     cecho c '清理 docker'
@@ -83,7 +106,7 @@ if [ -x "$(command -v docker)" ]; then
 fi
 
 
-if [ -x "$(command -v npm)" ]; then
+if ! [ -x "$(command -v npm)" ]; then
     cecho c '清理 npm'
     npm cache verify
     npm cache clear --force
@@ -115,4 +138,5 @@ cecho y "${BEFORESPACE}"
 cecho g '╔═══════════════╗'
 cecho g '║  清理后的空间 ║'
 cecho g '╚═══════════════╝'
-df -h / /home
+CURRENT_SPACE=$(df -h / /home)
+cecho g "${CURRENT_SPACE}"
