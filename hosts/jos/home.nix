@@ -14,10 +14,21 @@
     ../../home/fish.nix
   ];
 
+
   home.file = {
-    ".config/alacritty" = { source = "${config.home.homeDirectory}/.config/alacritty"; recursive = true; };
-    ".config/nvim" = { source = "${config.home.homeDirectory}/.config/nvim"; recursive = true; };
-    ".config/fish" = { source = "${config.home.homeDirectory}/.config/fish"; recursive = true; };
+  ".config/alacritty" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/alacritty";
+    recursive = true;
   };
+  ".config/nvim" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nvim";
+    recursive = true;
+  };
+  ".config/fish" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/fish";
+    recursive = true;
+  };
+};
+
 }
 
