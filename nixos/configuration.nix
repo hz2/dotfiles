@@ -40,8 +40,8 @@
 
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
 
   environment.variables.GTK_THEME = "Adwaita:dark";
 
@@ -78,9 +78,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
    environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   firefox
-  #   wget
       neovim
       alacritty
       xclip
@@ -91,13 +88,30 @@
       ripgrep	# grep
       hyperfine
       git
+      tmux
+      xwayland
+      hypridle
+      slurp
+      grim
+      hyprpaper
+      (nerdfonts.override  { fonts = [ "Hack" ]; })
     ];
 
     programs.fish.enable = true;
 
-#   programs.tmux = {
-#     enable = true;
-#   }
+    programs.hyprland.enable = true;
+
+    services.greetd.enable = true;
+    services.greetd.settings.default_session = {
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland";
+      user = "jos";  # <-- your username
+    };
+
+    xdg.portal.enable = true;
+    xdg.portal.extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+    ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
